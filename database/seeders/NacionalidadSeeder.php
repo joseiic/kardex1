@@ -26,6 +26,8 @@ class NacionalidadSeeder extends Seeder
             ['nom_nacionalidad' => 'Brasileña'],
             ['nom_nacionalidad' => 'Uruguaya'],
             ['nom_nacionalidad' => 'Paraguaya'],
+            ['nom_nacionalidad' => 'China'],
+            ['nom_nacionalidad' => 'Haitiana'],
             ['nom_nacionalidad' => 'Otras'],
         ]);
     }
