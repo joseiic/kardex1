@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PacienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +19,4 @@ Auth::routes();
 Route::get('/', function(){
     return redirect()->route('login');
 });
+Route::resource('/paciente',PacienteController::class);

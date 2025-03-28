@@ -299,41 +299,41 @@ return [
         ['header' => 'Inscripcio'],
         [
             'text' => 'Paciente',
-            'url'  => '',
+            'url'  => 'paciente',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Grupo Familiar',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-users',
         ],
         
         ['header' => 'Gestion de datos'],
         [
             'text' => 'Patologias',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-bug',
         ],
         [
             'text' => 'Sectores',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-location-arrow',
         ],
         [
             'text' => 'Nacionalidad',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-map',
         ],
         [
             'text' => 'Pueblos Originarios',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fa fa-flag',
         ],
         [
             'text' => 'Tipos de Previcion',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-lock',
-        ],-
+            'icon' => 'fa fa-heartbeat',
+        ],
     ],
 
     /*
