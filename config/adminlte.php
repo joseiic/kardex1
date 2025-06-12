@@ -299,7 +299,7 @@ return [
         ['header' => 'Inscripcio'],
         [
             'text' => 'Paciente',
-            'url'  => 'paciente',
+            'url'  => 'pacientes',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Previcion extends Model
 {
     use HasFactory;
+    protected $table = 'previcion';
 }

@@ -6,6 +6,12 @@
 
         <title>Laravel</title>
 
+        <!-- Bootstrap 5 -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+        
+        <!-- Bootstrap Table -->
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.2/dist/bootstrap-table.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.22.2/dist/extensions/filter-control/bootstrap-table-filter-control.min.css">
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 

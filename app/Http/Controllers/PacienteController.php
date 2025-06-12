@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+use App\Models\Sector;
+use App\Models\Nacionalidad;
+use App\Models\PuebloOriginario;
+use App\Models\Previcion;
+use App\Models\Familia;
+
 
 class PacienteController extends Controller
 {
@@ -14,7 +20,23 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        return view('paciente.listaPaciente');
+          $pacientes = Paciente::with([
+        'sector',
+        'nacionalidad',
+        'puebloOriginario',
+        'previcion',
+        'familia' // si tienes relación definida como familia()
+    ])->get();
+
+    return view('paciente.listaPaciente', [
+        'pacientes' => $pacientes,
+        'sectores' => Sector::all(),
+        'nacionalidades' => Nacionalidad::all(),
+        'pueblos' => PuebloOriginario::all(),
+        'previciones' => Previcion::all(),
+        'familias' => Familia::all(),
+    ]);
+        
     }
 
     /**
@@ -35,7 +57,34 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      try {
+        $validated = $request->validate([
+            'rut_paciente' => 'required|unique:pacientes',
+            'nombre' => 'required',
+            'apellido_paterno' => 'required',
+            'apellido_materno' => 'required',
+            'sexo' => 'required|in:Masculino,Femenino',
+            'fecha_nacimiento' => 'required|date',
+            'num_ficha' => 'required',
+            'estado' => 'required|in:Inscrito,Trasladado,Fallecido',
+            'id_sector' => 'required|exists:sectores,id',
+            'id_nacionalidad' => 'required|exists:nacionalidad,id',
+            'id_pueblo_originario' => 'required|exists:pueblo_originario,id',
+            'id_previcion' => 'required|exists:previcion,id',
+            'cod_familia' => 'required|exists:familias,cod_familia',
+        ]);
+
+        Paciente::create($validated);
+
+    return redirect()->route('pacientes.index')->with('console_log', 'Paciente guardado correctamente');
+
+    } catch (\Illuminate\Validation\ValidationException $e) {
+        dd($e->errors());
+    }
+    
+    
+
+        
     }
 
     /**

@@ -19,4 +19,4 @@ Auth::routes();
 Route::get('/', function(){
     return redirect()->route('login');
 });
-Route::resource('/paciente',PacienteController::class);
+Route::resource('pacientes',PacienteController::class);
